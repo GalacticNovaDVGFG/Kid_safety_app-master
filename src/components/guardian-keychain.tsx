@@ -264,7 +264,7 @@ export default function GuardianKeychain() {
     return () => {
       stopAnalysis();
       stopLocationTracking();
-      stopCamera();
+      stopMedia();
     };
   }, []);
   
