@@ -412,7 +412,6 @@ export default function GuardianKeychain() {
                 {isRecording ? (
                   <Button onClick={async () => {
                     // stop recording
-                    const { stopRecording } = await import('@/lib/recordings');
                     if (recorderRef.current) recorderRef.current.stop();
                     setIsRecording(false);
                     stopMedia();
