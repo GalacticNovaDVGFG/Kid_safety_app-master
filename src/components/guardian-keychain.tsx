@@ -346,7 +346,7 @@ export default function GuardianKeychain() {
       </CardHeader>
 
       <CardContent className="p-0">
-        {!isCalling ? (
+        {!isCalling911 ? (
           <div className="flex flex-col items-center justify-center gap-6 p-8 min-h-[450px]">
             <div className="text-center">
               <h2 className="font-headline text-2xl font-bold text-foreground">In Case of Emergency</h2>
