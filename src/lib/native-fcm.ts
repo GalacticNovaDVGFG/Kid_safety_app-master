@@ -8,8 +8,8 @@ import { ref, set } from 'firebase/database';
 export async function registerNativeFCM(userId?: string) {
   if (Capacitor.getPlatform() !== 'android' && Capacitor.getPlatform() !== 'ios') return null;
   try{
-    // Import plugin dynamically so web builds don't break
-    const mod: any = await import('@capacitor-firebase/messaging');
+    // Import plugin dynamically (use eval-import to avoid static bundler resolution on web builds)
+    const mod: any = await (eval("import('@capacitor-firebase/messaging')"));
     const FirebaseMessaging = mod.FirebaseMessaging || mod;
     // request permissions (iOS) and get a token
     try{ await FirebaseMessaging.requestPermissions(); }catch(e){}
